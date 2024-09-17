@@ -1,6 +1,9 @@
 "use client";
 import Accordion from "@/components/Accordion";
 import Hero from "@/components/home/Hero";
+import InteractiveChart from "@/components/InteractiveChart";
+import MyBarChart from "@/components/MyBarChart";
+import MyPieChart from "@/components/MyPieChart";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 
@@ -14,16 +17,18 @@ export default function Home() {
       <div className="container mx-auto mb-12">
         <Hero />
 
-        <div className="flex items-center justify-between border-2 border-gray-200 rounded-md p-4 my-4 mb-12">
-          <Calendar
+        <div className=" border-2 border-blue-200  rounded-md p-4 my-4 mb-12">
+            <InteractiveChart/>
+          <div className="lg:flex items-center justify-between">
 
-            mode="single"
-            selected={date}
-            onSelect={setDate}
-            className="rounded-md border shadow-lg shadow-blue-500 transition-shadow duration-300"
-          />
-          <Accordion />
+          <div className="w-3/4">
+          <MyPieChart/>
+          </div>
+           <MyBarChart/>
+          
+          </div>
         </div>
+      
       </div>
     </main>
   );
